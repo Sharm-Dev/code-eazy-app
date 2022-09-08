@@ -1,7 +1,6 @@
-const ArrayQ2 = [
+const ArrayMenuBTNs = [
   { id: 1, text: "Array" },
   { id: 2, text: "Strings" },
   { id: 3, text: "Objects" },
-  { id: 4, text: "strings" },
 ];
-export { ArrayQ2 };
+export { ArrayMenuBTNs };

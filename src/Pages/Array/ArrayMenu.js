@@ -1,6 +1,12 @@
-import { useNavigate, useParams, Link } from "react-router-dom";
+
+import { useNavigate, useParams, Link, useHistory } from "react-router-dom";
+
+
 import { ArrayQ1 } from "./ArrayQ1";
-import { ArrayQ2 } from "./ArrayQ2";
+import { ArrayMenuBTNs } from "./ArrayMenuBTNs";
+
+
+
 
 
 export default function ArrayMenu() {
@@ -13,8 +19,8 @@ export default function ArrayMenu() {
     navigate(`/array-numbers/arrayQ${questionNum}`);
   }
 
-  function printButtons(ArrayQ1) {
-    return ArrayQ1.map((eachQuestion) => (
+  function printButtons(ArrayMenuBTNs) {
+    return ArrayMenuBTNs.map((eachQuestion) => (
       <button
         key={eachQuestion.id}
         type="button"
@@ -25,12 +31,16 @@ export default function ArrayMenu() {
     ));
   }
 
+  
+
   return (
     <div>
       <p>How would you like to manipulate your array?</p>
-      {arrayId === "array-numbers/arrayQ1"
+      <button type="button">Numbers</button>
+     <button type="button">Strin</button>
+      {/* {arrayId === "array-numbers/ArrayMenuBTNs"
         ? printButtons(ArrayQ1)
-        : printButtons(ArrayQ2)}
+        : printButtons(ArrayMenuBTNs)} */}
       <button>
         <Link to="/main-menu">Back</Link>
       </button>
