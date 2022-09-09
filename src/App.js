@@ -42,7 +42,7 @@ function App() {
         />
         <Route
           //Change pathname
-          path="/sub-menu/:active"
+          path="/Array-menu"
           //For the ArrayMenu page I made a container compenent called active and gave it access to the function
           element={<ArrayMenu active={activeMainMenuItem} />}
         />
