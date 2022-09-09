@@ -6,15 +6,18 @@ import Contact from './Pages/index/Contact';
 import About from './Pages/index/About';
 import MainMenu from './Pages/index/MainMenu';
 import ArrayMenu from './Pages/index/ArrayMenu';
-import ArrayNumbers from './Pages/Array/ArrayQ1'
+import ArrayQ1 from './Pages/Array/ArrayQ1';
+import ArrayQ2 from './Pages/Array/ArrayQ2';
+import ArrayQ3 from './Pages/Array/ArrayQ3';
 import { useState } from "react";
 
 
+
 function App() {
-  //A State Variable
+
   const [activeMainMenuItem, setActiveMainMenuItem] = useState("");
   console.log("activeMainMenuItem", activeMainMenuItem);
-  //Function with item inside and then state is called inside with the same item name
+
   function setMainMenuActivity(item) {
     setActiveMainMenuItem(item)
   }
@@ -33,7 +36,6 @@ function App() {
           path="/main-menu"
           element={
             <MainMenu
-              //For the Mainmenu page, I have given main menu page access to a variable/container that holds the function called setMainMenuActivity with an item that I have declared in the called functions below
               setMainMenuActivityArray={() => setMainMenuActivity("Array")}
               setMainMenuActivityString={() => setMainMenuActivity("String")}
               setMainMenuActivityObject={() => setMainMenuActivity("Object")}
@@ -41,11 +43,21 @@ function App() {
           }
         />
         <Route
-          //Change pathname
           path="/array-menu"
           element={<ArrayMenu active={activeMainMenuItem} />}
         />
-        <Route path="/array-numbers/:arrayId" element={<ArrayNumbers />} />
+        <Route
+          path="/arrayQ1"
+          element={<ArrayQ1 active={activeMainMenuItem} />}
+        />
+        <Route
+          path="/arrayQ2"
+          element={<ArrayQ2 active={activeMainMenuItem} />}
+        />
+        <Route
+          path="/arrayQ3"
+          element={<ArrayQ3 active={activeMainMenuItem} />}
+        />
       </Routes>
     </Router>
   );

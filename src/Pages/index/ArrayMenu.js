@@ -3,19 +3,19 @@ import { useNavigate, Link } from "react-router-dom";
  
 
 export default function ArrayMenu() {
-  const navigate = useNavigate();
+  let navigate = useNavigate();
  
 
 
   function arrayButtonOne() {
-    navigate("arrayQ1");
+    navigate("/arrayQ1");
     
   }
   function arrayButtonTwo() {
-    navigate("arrayQ2")
+    navigate("/arrayQ2")
   }
   function arrayButtonThree() {
-    navigate("arrayQ3")
+    navigate("/arrayQ3")
   }
 
   return (
