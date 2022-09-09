@@ -5,8 +5,8 @@ import Home from "./Pages/index/Home";
 import Contact from './Pages/index/Contact';
 import About from './Pages/index/About';
 import MainMenu from './Pages/index/MainMenu';
-import ArrayMenu from './Pages/Array/ArrayMenu';
-import ArrayNumbers from './Pages/Array/ArrayNumbers'
+import ArrayMenu from './Pages/index/ArrayMenu';
+import ArrayNumbers from './Pages/Array/ArrayQ1'
 import { useState } from "react";
 
 
@@ -42,8 +42,7 @@ function App() {
         />
         <Route
           //Change pathname
-          path="/Array-menu"
-          //For the ArrayMenu page I made a container compenent called active and gave it access to the function
+          path="/array-menu"
           element={<ArrayMenu active={activeMainMenuItem} />}
         />
         <Route path="/array-numbers/:arrayId" element={<ArrayNumbers />} />
