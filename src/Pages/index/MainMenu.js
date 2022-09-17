@@ -11,8 +11,8 @@ export default function MainMenu(props) {
           type="button"
           className="ArrayBtns"
           onClick={() => {
-            //not sure if I need to put the word Array in here
-            props.setMainMenuActivityArray("Array");
+            //used the window.location.href to delcare what url was active when I clicked the button
+            window.location.href = "http://localhost:3000/main-menu/array-menu";
           }}
         >
           Array
@@ -20,7 +20,7 @@ export default function MainMenu(props) {
         <button
           type="button"
           onClick={() => {
-            props.setMainMenuActivityString();
+            window.location.href = "http://localhost:3000/main-menu/string-menu";
           }}
         >
           Strings

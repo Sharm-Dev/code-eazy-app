@@ -6,16 +6,16 @@ export default function ArrayMenu() {
   let navigate = useNavigate();
  
 
-
+//Made my navigate file path, the same path as what is in the app.js routes to navigate to that component and show the path taken to get there in the url 
   function arrayButtonOne() {
-    navigate("/arrayQ1");
+    navigate("/main-menu/array-menu/arrayQ1");
     
   }
   function arrayButtonTwo() {
-    navigate("/arrayQ2")
+    navigate("/main-menu/array-menu/arrayQ2");
   }
   function arrayButtonThree() {
-    navigate("/arrayQ3")
+    navigate("/main-menu/array-menu/arrayQ3");
   }
 
   return (

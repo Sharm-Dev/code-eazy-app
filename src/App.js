@@ -9,6 +9,7 @@ import ArrayMenu from './Pages/index/ArrayMenu';
 import ArrayQ1 from './Pages/Array/ArrayQ1';
 import ArrayQ2 from './Pages/Array/ArrayQ2';
 import ArrayQ3 from './Pages/Array/ArrayQ3';
+import StringMenu from './Pages/index/StringMenu';
 import NotFound from "./Pages/index/NotFound";
 import { useState } from "react";
 
@@ -16,24 +17,24 @@ import { useState } from "react";
 
 function App() {
 
-  const [activeMainMenuItem, setActiveMainMenuItem] = useState("");
-  console.log("activeMainMenuItem", activeMainMenuItem);
+  // const [activeMainMenuItem, setActiveMainMenuItem] = useState("");
+  // console.log("activeMainMenuItem", activeMainMenuItem);
  
 
-  function setMainMenuActivity(item) {
+  // function setMainMenuActivity(item) {
 
-    //stuck on how to make this state work
-    //Im calling props state on my buttons in Mainmenu
-    //Then I thought I could write some kind of if statement to navigate to the route I want
-    if (item === "Array") {
-      return <Routes>
-        <Route path='/array-menu' element={<ArrayMenu/> } /> 
-      </Routes>
-    } 
+  //   //stuck on how to make this state work
+  //   //Im calling props state on my buttons in Mainmenu
+  //   //Then I thought I could write some kind of if statement to navigate to the route I want
+  //   if (item === "Array") {
+  //     return <Routes>
+  //       <Route path='/array-menu' element={<ArrayMenu/> } /> 
+  //     </Routes>
+  //   } 
 
-    setActiveMainMenuItem(item)
+  //   setActiveMainMenuItem(item)
 
-  }
+  // }
 
   return (
     <Router>
@@ -49,30 +50,14 @@ function App() {
         <Route
           //I put /* to make this dymanic, so in the url I can write /main-menu then /array-menu then I am taken to the ArrayMenu component
           path="/main-menu/*"
-          element={
-            <MainMenu
-              setMainMenuActivityArray={() => setMainMenuActivity("Array")}
-              setMainMenuActivityString={() => setMainMenuActivity("String")}
-              setMainMenuActivityObject={() => setMainMenuActivity("Object")}
-            />
-          }
+          element={<MainMenu />}
         />
-        <Route
-          path="/array-menu"
-          element={<ArrayMenu active={activeMainMenuItem} />}
-        />
-        <Route
-          path="/arrayQ1"
-          element={<ArrayQ1 active={activeMainMenuItem} />}
-        />
-        <Route
-          path="/arrayQ2"
-          element={<ArrayQ2 active={activeMainMenuItem} />}
-        />
-        <Route
-          path="/arrayQ3"
-          element={<ArrayQ3 active={activeMainMenuItem} />}
-        />
+        {/* //declared my Array file path in my route */}
+        <Route path="/main-menu/array-menu" element={<ArrayMenu />} />
+        <Route path="/main-menu/array-menu/arrayQ1" element={<ArrayQ1 />} />
+        <Route path="/main-menu/array-menu/arrayQ2" element={<ArrayQ2 />} />
+        <Route path="/main-menu/array-menu/arrayQ3" element={<ArrayQ3 />} />
+        <Route path="/main-menu/string-menu" element={<StringMenu />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
